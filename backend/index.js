@@ -7,7 +7,14 @@ const PORT = process.env.PORT || 8080;
 const TaskRouter = require('./Routes/TaskRouter');
 const cors = require('cors');
 
-app.use(cors());
+
+
+
+app.use(cors({ 
+  origin: 'https://mern-stack-app-ui.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
+
 app.use(bodyParser.json());
 app.use('/tasks', TaskRouter)
 
