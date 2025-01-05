@@ -11,6 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/tasks', TaskRouter)
 
+app.use('/',(req , res)=>{
+    res.send('hello from the server')
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on PORT=${PORT}`);
 });
